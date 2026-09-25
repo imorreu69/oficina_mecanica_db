@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const movimentacaoController = require('../controllers/movimentacaoController');
+const { cadastrar, listar } = require('../controllers/livroController');
 const auth = require('../middlewares/auth');
-router.post('/movimentacoes, auth, movimentacaoController.cadastrar');
+router.post('/livros', auth, cadastrar);
+router.get('/livros', auth, listar);
+
 module.exports = router;
